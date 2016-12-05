@@ -2,7 +2,10 @@
 <!ELEMENT validation (global*, formset*)>
 
 <!-- 配置相关的 -->
-<!ELEMENT global (validator*)>
+<!ELEMENT global (validators*)>
+
+<!-- 配置相关的 -->
+<!ELEMENT validators (validator*)>
 
 <!-- 验证器 -->
 <!ELEMENT validator (#PCDATA)>
