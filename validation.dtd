@@ -15,7 +15,7 @@
 <!ATTLIST validator classname CDATA #REQUIRED>
 
 <!-- 多个验证form集合 -->
-<!ELEMENT formset (form+)>
+<!ELEMENT formset (form*)>
 
 <!--
     验证表单,可自定义,比如区分行业,区分账套,区分类型等根据不同的名称加载不同的验证方案
