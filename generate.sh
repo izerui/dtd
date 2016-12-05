@@ -1,0 +1,1 @@
+xjc -dtd -d ../../java -p com.ecworking.form.parser validation.dtd
