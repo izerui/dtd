@@ -1,18 +1,6 @@
 <!-- 表单验证 -->
-<!ELEMENT validation (global?, formset?)>
+<!ELEMENT validation (formset?)>
 
-<!-- 配置相关的 -->
-<!ELEMENT global (validators?)>
-
-<!-- 配置相关的 -->
-<!ELEMENT validators (validator+)>
-
-<!-- 验证器 -->
-<!ELEMENT validator (#PCDATA)>
-<!-- 默认内置的验证器名字有:  -->
-<!ATTLIST validator name CDATA #REQUIRED>
-<!-- 验证器类 必须实现com.ecworking.validator.Valiator 接口-->
-<!ATTLIST validator classname CDATA #REQUIRED>
 
 <!-- 多个验证form集合 -->
 <!ELEMENT formset (form*)>
@@ -29,17 +17,15 @@
 <!--<!ATTLIST form extends CDATA #IMPLIED>-->
 
 <!-- 要验证的字段 -->
-<!ELEMENT field (exec*)>
+<!ELEMENT field (validator*)>
 <!-- 字段名 -->
 <!ATTLIST field name CDATA #REQUIRED>
-<!--&lt;!&ndash; 验证方案,多个逗号区分,如果需要传入参数用括号包围置后  例如: required,notnull,min(1),max(100),email,date(yyyy-MM-dd).... &ndash;&gt;-->
-<!--<!ATTLIST field valipropertydators CDATA #IMPLIED>-->
 
-<!-- 执行器(选择一种验证器执行验证) -->
-<!ELEMENT exec (#PCDATA)>
+<!-- 选择一种验证器执行验证 -->
+<!ELEMENT validator (#PCDATA)>
 <!-- 执行的validator的名称 -->
-<!ATTLIST exec name CDATA #REQUIRED>
+<!ATTLIST validator name CDATA #REQUIRED>
 <!-- 验证失败的错误信息 -->
-<!ATTLIST exec msg CDATA #REQUIRED>
+<!ATTLIST validator msg CDATA #REQUIRED>
 <!-- 传入的参数 -->
-<!ATTLIST exec var CDATA #IMPLIED>
+<!ATTLIST validator var CDATA #IMPLIED>
